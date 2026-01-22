@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    int choice;
+    float total = 0;
+
+    printf("Menu:\n");
+    printf("1. Tea - Rs.10\n");
+    printf("2. Coffee - Rs.20\n");
+    printf("3. Snacks - Rs.30\n");
+    printf("4. Exit\n");
+
+    printf("Enter your choice (1-4): ");
+    scanf("%d", &choice);
+
+    switch (choice)
+    {
+        case 1:
+            total = 10;
+            printf("You selected Tea.\n");
+            break;
+        case 2:
+            total = 20;
+            printf("You selected Coffee.\n");
+            break;
+        case 3:
+            total = 30;
+            printf("You selected Snacks.\n");
+            break;
+        case 4:
+            printf("Thank you! Visit again.\n");
+            return 0;
+        default:
+            printf("Invalid choice.\n");
+            return 0;
+    }
+
+    printf("Total Amount: Rs. %.2f\n", total);
+
+    return 0;
+}
