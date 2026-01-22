@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char mobile[20];
+    int i, valid = 1;
+
+    printf("Enter mobile number: ");
+    scanf("%s", mobile);
+
+    if(strlen(mobile) != 10) {
+        valid = 0;
+    } else {
+        for(i = 0; i < 10; i++) {
+            if(!isdigit(mobile[i])) {
+                valid = 0;
+                break;
+            }
+        }
+    }
+
+    if(valid)
+        printf("Mobile number is valid.");
+    else
+        printf("Mobile number is invalid.");
+
+    return 0;
+}
