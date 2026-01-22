@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int i, n;
+    float income, expense, totalExpense = 0, savings;
+
+    printf("Enter monthly income: ");
+    scanf("%f", &income);
+
+    printf("Enter number of expense categories: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++)
+    {
+        printf("Enter expense %d: ", i);
+        scanf("%f", &expense);
+        totalExpense += expense;
+    }
+
+    savings = income - totalExpense;
+
+    printf("\n----- Monthly Savings Report -----\n");
+    printf("Total Income   : %.2f\n", income);
+    printf("Total Expenses : %.2f\n", totalExpense);
+    printf("Total Savings  : %.2f\n", savings);
+
+    if (savings > 0)
+        printf("Status         : Savings\n");
+    else if (savings == 0)
+        printf("Status         : No Savings\n");
+    else
+        printf("Status         : Loss\n");
+
+    return 0;
+}
