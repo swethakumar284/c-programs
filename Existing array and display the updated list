@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+struct Item
+{
+    int id;
+};
+
+int main()
+{
+    struct Item a[10];
+    int i, n, add;
+
+    printf("Enter existing record count: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        printf("Enter ID: ");
+        scanf("%d", &a[i].id);
+    }
+
+    printf("How many new records to add? ");
+    scanf("%d", &add);
+
+    for(i = n; i < n + add; i++)
+    {
+        printf("Enter new ID: ");
+        scanf("%d", &a[i].id);
+    }
+
+    printf("\nUpdated Records:\n");
+    for(i = 0; i < n + add; i++)
+        printf("ID: %d\n", a[i].id);
+
+    return 0;
+}
