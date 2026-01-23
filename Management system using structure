@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+struct Item
+{
+    int id;
+    char name[20];
+    int qty;
+};
+
+int main()
+{
+    struct Item inv[10];
+    int n = 0, ch, i, sid;
+
+    do
+    {
+        printf("\n1.Add  2.Display  3.Search  4.Update  5.Exit\n");
+        scanf("%d", &ch);
+
+        switch(ch)
+        {
+        case 1:
+            printf("Enter ID Name Quantity: ");
+            scanf("%d %s %d",
+                  &inv[n].id, inv[n].name, &inv[n].qty);
+            n++;
+            break;
+
+        case 2:
+            for(i = 0; i < n; i++)
+                printf("%d %s %d\n",
+                       inv[i].id, inv[i].name, inv[i].qty);
+            break;
+
+        case 3:
+            printf("Enter ID to search: ");
+            scanf("%d", &sid);
+            for(i = 0; i < n; i++)
+                if(inv[i].id == sid)
+                    printf("%d %s %d\n",
+                           inv[i].id, inv[i].name, inv[i].qty);
+            break;
+
+        case 4:
+            printf("Enter ID to update: ");
+            scanf("%d", &sid);
+            for(i = 0; i < n; i++)
+                if(inv[i].id == sid)
+                {
+                    printf("Enter new quantity: ");
+                    scanf("%d", &inv[i].qty);
+                }
+            break;
+        }
+    } while(ch != 5);
+
+    return 0;
+}
