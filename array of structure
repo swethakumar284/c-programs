@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+struct Employee
+{
+    int id;
+    char name[20];
+};
+
+int main()
+{
+    struct Employee e[5];
+    int i, n, sid, found = 0;
+
+    printf("Enter number of employees: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        printf("Enter ID and Name: ");
+        scanf("%d %s", &e[i].id, e[i].name);
+    }
+
+    printf("Enter ID to search: ");
+    scanf("%d", &sid);
+
+    for(i = 0; i < n; i++)
+    {
+        if(e[i].id == sid)
+        {
+            printf("Record Found: %d %s\n", e[i].id, e[i].name);
+            found = 1;
+            break;
+        }
+    }
+
+    if(!found)
+        printf("Record not found\n");
+
+    return 0;
+}
