@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+struct Product
+{
+    int id;
+    float price;
+};
+
+int main()
+{
+    struct Product p[5];
+    int i, n, uid;
+
+    printf("Enter number of products: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        printf("Enter ID and Price: ");
+        scanf("%d %f", &p[i].id, &p[i].price);
+    }
+
+    printf("Enter ID to update: ");
+    scanf("%d", &uid);
+
+    for(i = 0; i < n; i++)
+    {
+        if(p[i].id == uid)
+        {
+            printf("Enter new price: ");
+            scanf("%f", &p[i].price);
+
+            printf("Updated Record: ID=%d Price=%.2f\n",
+                   p[i].id, p[i].price);
+            break;
+        }
+    }
+
+    return 0;
+}
