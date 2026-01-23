@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+
+float calculateArea(float length, float breadth)
+{
+    return length * breadth;
+}
+
+int main()
+{
+    float length, breadth, area;
+
+    printf("Enter length: ");
+    scanf("%f", &length);
+
+    printf("Enter breadth: ");
+    scanf("%f", &breadth);
+
+    area = calculateArea(length, breadth);
+
+    printf("Area of Rectangle = %.2f", area);
+
+    return 0;
+}
